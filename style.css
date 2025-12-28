@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Play Pretend";
+  src: url("media/Font/PlayPretend.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --mandragocolor: #00fc93;
 }
@@ -223,3 +231,4 @@ footer a:hover svg {
     position: relative;
   } */
 }
+
