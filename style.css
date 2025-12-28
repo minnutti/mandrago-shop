@@ -1,0 +1,225 @@
+:root {
+  --mandragocolor: #00fc93;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-header{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+/* #mandrix {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+} */
+
+.page-wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mandragocolor);
+  background-color: #000000; /* #00fc93 */
+  margin: 0;
+}
+
+main {
+  max-width: 1000px;
+  margin-inline: auto;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Play Pretend";
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  /* margin-block-end: 2rem; */
+}
+
+img {
+  max-width: 100%;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  transform-style: preserve-3d;
+}
+
+.gallery-panel {
+  flex: 1;
+  aspect-ratio: 1/1.2;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
+
+  background: url(media/product-card.png) center / cover no-repeat;
+
+  border-radius: 8px;
+  border: 3px solid var(--mandragocolor);
+
+  /* not 100% compatible with all browsers */
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+
+  /* background-color: red; */
+}
+
+.gallery-panel .item {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  padding: 0rem;
+}
+
+.gallery-panel .title {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-family: "Play Pretend";
+  font-size: 1rem;
+  color: #000000;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-panel:hover {
+  transform: scale(1.2);
+}
+
+.gallery:hover > :not(:hover) {
+  transform: perspective(300px) rotateY(30deg) scale(0.8);
+}
+
+.gallery-panel:hover ~ .gallery-panel {
+  transform: perspective(300px) rotateY(-30deg) scale(0.8);
+}
+
+/*
+MINNUTTI
+*/
+.minnutti-logo {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.minnutti-logo svg {
+  width: 90px;
+  height: auto;
+  display: block;
+  filter: invert(100%) brightness(200%) opacity(20%);
+}
+footer a:hover svg {
+  filter: invert(51%) sepia(69%) saturate(910%) hue-rotate(156deg)
+    brightness(106%) contrast(106%) drop-shadow(1px -1px 6px #00ccff);
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem;
+  bottom: 0;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+
+  .page-header{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  .gallery {
+    flex-direction: column;
+    gap: 1rem;
+    transform-style: flat;
+  }
+
+  .gallery-panel {
+    aspect-ratio: auto;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    background-position: left center;
+    background-size: cover;
+    margin-left: 8px;
+    margin-right: 8px;
+
+    border-radius: 12px;
+    border-width: 2px;
+  }
+
+  /* Remover efeitos de hover */
+  .gallery-panel,
+  .gallery-panel:hover,
+  .gallery:hover > :not(:hover),
+  .gallery-panel:hover ~ .gallery-panel {
+    transform: none !important;
+  }
+
+  .gallery-panel .item {
+    position: static;
+    width: 100px;
+    height: 100px;
+
+    padding: 0;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .gallery-panel .title {
+    position: static;
+    transform: none;
+
+    flex: 1; /*ocupa o espaço restante da linha*/
+    text-align: center; /*alinha o texto no centro*/
+
+    font-size: 1.4rem;
+    color: var(--mandragocolor);
+  }
+
+  /* Remove reflexo */
+  /* .gallery-panel {
+    -webkit-box-reflect: none !important;
+  } */
+
+  /* .footer {
+    position: relative;
+  } */
+}
