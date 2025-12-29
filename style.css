@@ -32,7 +32,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 
 body {
@@ -46,6 +46,7 @@ body {
 }
 
 main {
+  flex: 1;
   max-width: 1000px;
   margin-inline: auto;
   text-align: center;
@@ -154,8 +155,7 @@ footer a:hover svg {
 .footer {
   width: 100%;
   padding: 1rem;
-  bottom: 0;
-  position: absolute;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -231,4 +231,3 @@ footer a:hover svg {
     position: relative;
   } */
 }
-
