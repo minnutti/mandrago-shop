@@ -155,7 +155,7 @@ footer a:hover svg {
 .footer {
   width: 100%;
   padding: 1rem;
-  position: relative;
+  position: absolute;
 }
 
 @media (max-width: 768px) {
@@ -227,7 +227,8 @@ footer a:hover svg {
     -webkit-box-reflect: none !important;
   } */
 
-  /* .footer {
+  .footer {
     position: relative;
-  } */
+  }
 }
+
